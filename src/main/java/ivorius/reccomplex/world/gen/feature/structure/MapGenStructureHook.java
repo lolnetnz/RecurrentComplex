@@ -21,6 +21,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.StructureStart;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nullable;
@@ -85,11 +86,11 @@ public class MapGenStructureHook extends MapGenStructure
     @Override
     public String getStructureName()
     {
-        if (base != null) {
+        if (base != null && base.getStructureName() != null) {
             return base.getStructureName();
         }
         
-        return null;
+        return "";
     }
 
     @Override
