@@ -85,7 +85,11 @@ public class MapGenStructureHook extends MapGenStructure
     @Override
     public String getStructureName()
     {
-        return base.getStructureName();
+        if (base != null) {
+            return base.getStructureName();
+        }
+        
+        return null;
     }
 
     @Override
